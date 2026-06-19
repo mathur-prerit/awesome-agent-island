@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "mario",
+  "displayName": "Super Mario",
+  "minAppVersion": "0.4.0",
+  "showsPersonaGlyph": false,
+  "tokenBands": [
+    { "name": "rookie", "upTo": 50000 },
+    { "name": "super",  "upTo": 100000 },
+    { "name": "fire",   "upTo": 200000 },
+    { "name": "star" }
+  ],
+  "states": {
+    "working": {
+      "visual": { "kind": "sprite", "sheet": "sprites/level_run.png", "frameWidth": 576, "frameHeight": 80, "frameCount": 36, "fps": 8 },
+      "visualBands": {
+        "super": { "kind": "sprite", "sheet": "sprites/run_super.png", "frameWidth": 576, "frameHeight": 80, "frameCount": 36, "fps": 8 },
+        "fire":  { "kind": "sprite", "sheet": "sprites/run_fire.png",  "frameWidth": 576, "frameHeight": 80, "frameCount": 36, "fps": 8 },
+        "star":  { "kind": "sprite", "sheet": "sprites/run_star.png",  "frameWidth": 576, "frameHeight": 80, "frameCount": 36, "fps": 8 }
+      },
+      "sound": { "file": "sounds/start.wav", "trigger": "onEnter", "volume": 0.5 }
+    },
+    "waitingPermission": {
+      "visual": { "kind": "image", "file": "images/wait_permission.png" },
+      "sound": { "file": "sounds/waiting.wav", "trigger": "onEnter", "volume": 0.5 }
+    },
+    "waitingTurnEnd": {
+      "visual": { "kind": "image", "file": "images/wait_turnend.png" },
+      "sound": { "file": "sounds/waiting.wav", "trigger": "onEnter", "volume": 0.5 }
+    },
+    "finished": {
+      "visual": { "kind": "image", "file": "images/finished.png" },
+      "sound": { "file": "sounds/success.wav", "trigger": "onEnter", "volume": 0.6 }
+    },
+    "failed": {
+      "visual": { "kind": "image", "file": "images/failed.png" },
+      "sound": { "file": "sounds/fail.wav", "trigger": "onEnter", "volume": 0.6 }
+    },
+    "idle": {
+      "visual": { "kind": "image", "file": "images/idle.png" }
+    }
+  },
+  "layout": { "ownRow": true, "size": { "width": 288, "height": 40 } }
+}
