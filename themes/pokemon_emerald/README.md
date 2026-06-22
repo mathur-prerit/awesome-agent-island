@@ -14,7 +14,12 @@ runs alongside. Parallax mountains, pine trees and grass scroll past, and the wh
 > Requires **agent-island 0.4.0+** (token bands). Update with `agentisland update` if you're older.
 
 ```sh
+# From the hosted zip (one-liner):
+agentisland theme add https://raw.githubusercontent.com/mathur-prerit/awesome-agent-island/main/themes/pokemon_emerald.zip
+
+# …or from a local clone:
 agentisland theme add ./themes/pokemon_emerald
+
 agentisland theme set pokemon_emerald
 agentisland config set soundEnabled true   # optional: chiptune cues
 ```
