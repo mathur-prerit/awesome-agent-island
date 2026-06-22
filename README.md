@@ -15,7 +15,7 @@ pick it from the menu-bar **Animation theme** submenu.
 | Theme | Preview | Install |
 |-------|---------|---------|
 | **Super Mario** — a scrolling NES-style level that **powers up with your token usage** (rookie → super → fire → star), hops pipes & goombas, collects coins, with chiptune lifecycle cues. *Requires agent-island 0.4.0+.* | <img src="themes/mario/preview.png" width="320"> | `agentisland theme add https://raw.githubusercontent.com/mathur-prerit/awesome-agent-island/main/themes/mario.zip` |
-| **Pokémon Emerald Ride** — a side-scrolling forest bike ride inspired by the Emerald intro that shifts **day → golden hour → dusk → night** with token usage: a kid cycling a meadow route with a flyer overhead and a runner alongside, parallax mountains/trees, and chiptune cues. *Fan tribute — not for redistribution (see theme README). Requires agent-island 0.4.0+.* | <img src="themes/pokemon_emerald/preview.png" width="320"> | `agentisland theme add ./themes/pokemon_emerald` |
+| **Pokémon Emerald Ride** — a side-scrolling forest bike ride inspired by the Emerald intro that shifts **day → golden hour → dusk → night** with token usage: a kid cycling a meadow route with a flyer overhead and a runner alongside, parallax mountains/trees, and chiptune cues. *Fan tribute — not for redistribution (see theme README). Requires agent-island 0.4.0+.* | <img src="themes/pokemon_emerald/preview.png" width="320"> | `agentisland theme add https://raw.githubusercontent.com/mathur-prerit/awesome-agent-island/main/themes/pokemon_emerald.zip` |
 
 > The Mario theme uses **token bands** (a 0.4.0 feature): the more tokens a session burns, the higher
 > Mario's powerup tier. See [token-aware themes](#-token-aware-themes-040) below.
