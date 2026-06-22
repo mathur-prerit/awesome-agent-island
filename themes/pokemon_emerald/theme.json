@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "pokemon_emerald",
+  "displayName": "Pokémon Emerald Ride",
+  "minAppVersion": "0.4.0",
+  "showsPersonaGlyph": false,
+  "tokenBands": [
+    { "name": "day", "upTo": 50000 },
+    { "name": "golden", "upTo": 100000 },
+    { "name": "dusk", "upTo": 200000 },
+    { "name": "night" }
+  ],
+  "states": {
+    "working": {
+      "visual": { "kind": "sprite", "sheet": "sprites/ride_day.png", "frameWidth": 576, "frameHeight": 80, "frameCount": 36, "fps": 8 },
+      "visualBands": {
+        "golden": { "kind": "sprite", "sheet": "sprites/ride_golden.png", "frameWidth": 576, "frameHeight": 80, "frameCount": 36, "fps": 8 },
+        "dusk": { "kind": "sprite", "sheet": "sprites/ride_dusk.png", "frameWidth": 576, "frameHeight": 80, "frameCount": 36, "fps": 8 },
+        "night": { "kind": "sprite", "sheet": "sprites/ride_night.png", "frameWidth": 576, "frameHeight": 80, "frameCount": 36, "fps": 8 }
+      },
+      "sound": { "file": "sounds/start.wav", "trigger": "onEnter", "volume": 0.5 }
+    },
+    "waitingPermission": {
+      "visual": { "kind": "image", "file": "images/wait_permission.png" },
+      "sound": { "file": "sounds/waiting.wav", "trigger": "onEnter", "volume": 0.45 }
+    },
+    "waitingTurnEnd": {
+      "visual": { "kind": "image", "file": "images/wait_turnend.png" },
+      "sound": { "file": "sounds/waiting.wav", "trigger": "onEnter", "volume": 0.45 }
+    },
+    "finished": {
+      "visual": { "kind": "image", "file": "images/finished.png" },
+      "sound": { "file": "sounds/success.wav", "trigger": "onEnter", "volume": 0.55 }
+    },
+    "failed": {
+      "visual": { "kind": "image", "file": "images/failed.png" },
+      "sound": { "file": "sounds/fail.wav", "trigger": "onEnter", "volume": 0.55 }
+    },
+    "idle": {
+      "visual": { "kind": "image", "file": "images/idle.png" }
+    }
+  },
+  "layout": { "ownRow": true, "size": { "width": 288, "height": 40 } }
+}
