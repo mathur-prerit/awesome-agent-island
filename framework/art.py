@@ -305,8 +305,11 @@ TIER_CFG = {
     },
 }
 
-# layer scroll: (period, advance-per-frame); 36*adv is a multiple of period -> seamless loop
-LYR = {"far": (36, 1), "near": (72, 2), "tree": (48, 4), "grass": (16, 8)}
+# layer scroll: (period, advance-per-frame); 36*adv is a multiple of period -> seamless loop.
+# Scenery scrolls right (offset grows with i, added to x) because the riders face/travel left.
+# advance < period/2 on every layer so the direction is unambiguous, and 36*adv % period == 0
+# keeps the N-frame sheet a seamless loop.
+LYR = {"far": (36, 1), "near": (72, 2), "tree": (48, 4), "grass": (32, 8)}
 
 
 # ---------- background layers ----------
@@ -332,7 +335,7 @@ def paint_sky_decor(c, tier):
 
 def _hump(c, off, base, amp, period, color):
     for x in range(ART_W):
-        top = int(round(base - amp * (0.5 + 0.5 * math.cos(2 * math.pi * (x + off) / period))))
+        top = int(round(base - amp * (0.5 + 0.5 * math.cos(2 * math.pi * (x - off) / period))))
         c.rect(x, top, 1, GROUND_TOP - top, color)
 
 
@@ -359,10 +362,8 @@ def draw_pine(c, cx, tier):
 def draw_trees(c, tier, i):
     p, a = LYR["tree"]
     off = (i * a) % p
-    tx = -1
-    while tx * p - off < ART_W + p:
-        draw_pine(c, tx * p + p // 2 - off, tier)
-        tx += 1
+    for tx in range(-1, ART_W // p + 2):
+        draw_pine(c, tx * p + p // 2 + off, tier)
 
 
 def draw_grass(c, tier, i):
@@ -374,7 +375,7 @@ def draw_grass(c, tier, i):
     off = (i * a) % p
     x = -p
     while x < ART_W + p:
-        bx = x + p // 2 - off
+        bx = x + p // 2 + off
         c.px(bx, GROUND_TOP + 2, cfg["blade"] + (255,))
         c.px(bx, GROUND_TOP + 1, cfg["blade"] + (255,))
         c.px(bx + 4, GROUND_TOP + 3, cfg["grass_d"] + (255,))
